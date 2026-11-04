@@ -1,0 +1,9 @@
+erDiagram
+ drafts ||--o| approvals : authorizes
+ drafts ||--o{ write_journal : records
+ quota_buckets ||--o{ quota_reservations : reserves
+ drafts { uuid id PK string account string fingerprint string state }
+ approvals { uuid draft_id PK string account string fingerprint timestamp consumed_at }
+ write_journal { uuid draft_id FK string step string status string remote_id }
+ quota_buckets { date quota_date PK string bucket PK long reserved long consumed }
+ quota_reservations { uuid id PK date quota_date string bucket long amount long used }

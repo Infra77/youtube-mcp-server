@@ -1,0 +1,16 @@
+{
+  "checkedAt": "2026-11-03T08:26:49.513163+00:00",
+  "service": "OSV",
+  "components": 66,
+  "status": "PASS",
+  "findings": [],
+  "notAffected": [
+    {
+      "id": "GHSA-8jxr-pr72-r468",
+      "reason": "Advisory requires HTTP MCP listener; shipped server is stdio-only with web application disabled. Reassess before any transport change.",
+      "source": "https://github.com/modelcontextprotocol/java-sdk/security/advisories/GHSA-8jxr-pr72-r468",
+      "humanReview": "pending"
+    }
+  ],
+  "scope": "exact runtime versions; explicit transport-specific applicability disposition retained, human review required"
+}

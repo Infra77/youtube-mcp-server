@@ -1,0 +1,140 @@
+{
+  "date": "2026-11-03",
+  "scope": "fixture/local; no real Google consent or writes",
+  "totals": {
+    "tests": 47,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "suites": [
+    {
+      "name": "org.example.videocurator.domain.DomainTest",
+      "tests": 8,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "cases": [
+        "tfidfAndZeroVectors",
+        "durationIsExactAndPositive",
+        "parsesSupportedIdsAndRejectsHostAndAmbiguousParameters",
+        "languageRegionIsNotSilentlyRelaxedAndMalformedMetadataIsExcluded",
+        "selectorDeterministicAndRepairsGreedyUnderfill",
+        "handlesAndAliases",
+        "hardConstraintsAndUnknownLanguage",
+        "textGrammarDoesNotGuessAmbiguousNumbers"
+      ]
+    },
+    {
+      "name": "org.example.videocurator.domain.RankingEvaluationTest",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "cases": [
+        "labeledPrecisionAndRepresentativeTiming"
+      ]
+    },
+    {
+      "name": "org.example.videocurator.MetadataCacheTest",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "cases": [
+        "expiryBoundsAccountIsolationAndDefensiveCopies"
+      ]
+    },
+    {
+      "name": "org.example.videocurator.oauth.OAuthLifecycleTest",
+      "tests": 7,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "cases": [
+        "missingScopeAndRefreshTokenDoNotOverwriteCredential",
+        "deniedConsentDoesNotOverwriteExistingCredential",
+        "cachedTokenCannotOutliveCredentialReplacementOrDeletion",
+        "successfulRevocationAndUnreadableVaultBothRemoveLocalFile",
+        "fullLoopbackPkceExchangeRejectsWrongStateAndPersistsVerifiedAccount",
+        "failedRevocationStillRemovesLocalCredential",
+        "refreshIsCachedAndInvalidGrantIsSafe"
+      ]
+    },
+    {
+      "name": "org.example.videocurator.ProviderTest",
+      "tests": 10,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "cases": [
+        "repeatedPaginationTokenStopsWithinBound",
+        "cacheHitAvoidsUpstreamCharge",
+        "personalReadsAllSourcesWithBoundedPaginationAndTruthfulTimestamps",
+        "writeEndpointAndBody",
+        "prescribedNegativeErrorsAreSafeAndNeverRetried",
+        "mapsVideoAndMissingTagsWithOfficialQuery",
+        "playlistCreationAndReadbackContracts",
+        "malformedAnd429",
+        "searchHydratesAndChannelHandleUsesOfficialParameters",
+        "deletedAndPrivateVideoUnavailable"
+      ]
+    },
+    {
+      "name": "org.example.videocurator.SemanticsTest",
+      "tests": 3,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "cases": [
+        "rfcPkceKnownVectorAndState",
+        "quotaDateUsesPacificDst",
+        "analyticsNoInventedLikeHistory"
+      ]
+    },
+    {
+      "name": "org.example.videocurator.ServiceTest",
+      "tests": 2,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "cases": [
+        "everyReadWorkflowRejectsBeforeProviderWhenPreflightFails",
+        "invalidInputsCauseNoProviderOrQuotaCall"
+      ]
+    },
+    {
+      "name": "org.example.videocurator.DatabaseIT",
+      "tests": 14,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "cases": [
+        "approvedCommitReadbackAndReplay",
+        "expiredCleanupAndAccountDeletion",
+        "fingerprintTamperAndWrongPhrase",
+        "concurrentCommitsWriteOnce",
+        "quotaAttemptSettlesAndCrashConservativelyRetains",
+        "retentionRemovesOldTerminalDraftsAndDiagnosticsSurviveRoundtrip",
+        "eachInsufficientBucketRejectsBeforeAnyProviderCall",
+        "expiredApproval",
+        "partialWriteSurvivesRestartAndCannotBlindlyReplay",
+        "partialReportAndHumanRepairReconcileBeforeAppending",
+        "concurrentReservationsCannotOverspend",
+        "migrationAndFingerprintRoundtrip",
+        "ambiguousCreateDoesNotRetry",
+        "unapprovedAndInjectedMetadataNeverWrites"
+      ]
+    },
+    {
+      "name": "org.example.videocurator.McpProtocolIT",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "cases": [
+        "allFunctionalRequirementsThroughRealMcpClient"
+      ]
+    }
+  ]
+}

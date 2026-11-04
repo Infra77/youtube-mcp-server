@@ -1,0 +1,42 @@
+requirement,issue,pr,artifact,test,skill,brain_note,status
+FR-1,L-26,DEFERRED,src/main/java/org/example/videocurator/application/CuratorService.java,src/test/java/org/example/videocurator/McpProtocolIT.java,video-to-playlist,TF-IDF and Cosine Similarity,local-verified; live/human acceptance separate
+FR-2,L-27,DEFERRED,src/main/java/org/example/videocurator/application/CuratorService.java,src/test/java/org/example/videocurator/McpProtocolIT.java,video-to-playlist,Related Endpoints Do Not Exist,local-verified; live/human acceptance separate
+FR-3,L-28,DEFERRED,src/main/java/org/example/videocurator/application/CuratorService.java,src/test/java/org/example/videocurator/McpProtocolIT.java,video-to-playlist,YouTube Endpoint Matrix,local-verified; live/human acceptance separate
+FR-4,L-29,DEFERRED,src/main/java/org/example/videocurator/application/CuratorService.java,src/test/java/org/example/videocurator/McpProtocolIT.java,video-to-playlist,Analytics Data Semantics,local-verified; live/human acceptance separate
+FR-5,L-32,DEFERRED,src/main/java/org/example/videocurator/application/CuratorService.java,src/test/java/org/example/videocurator/McpProtocolIT.java,video-to-playlist,Playlist Approval Invariants,local-verified; live/human acceptance separate
+TQ-1,L-36,DEFERRED,docs/test-plan.md,src/test/java/org/example/videocurator/domain/DomainTest.java,local-check,TF-IDF and Cosine Similarity,see executed report; no hosted CI claim
+TQ-2,L-37,DEFERRED,docs/test-plan.md,src/test/java/org/example/videocurator/DatabaseIT.java,local-check,Postgres Crash Recovery,see executed report; no hosted CI claim
+TQ-3,L-38,DEFERRED,docs/test-plan.md,src/test/java/org/example/videocurator/McpProtocolIT.java,local-check,MCP Stdio Semantics,see executed report; no hosted CI claim
+TQ-4,L-39,DEFERRED,docs/test-plan.md,src/test/java/org/example/videocurator/ProviderTest.java,local-check,YouTube Endpoint Matrix,see executed report; no hosted CI claim
+TQ-5,L-40,DEFERRED,docs/test-plan.md,src/test/java/org/example/videocurator/ProviderTest.java,local-check,CI Fixture Isolation,local evidence; scheduled live workflow deferred
+TQ-6,L-23,DEFERRED,docs/test-plan.md,src/test/java/org/example/videocurator/DatabaseIT.java,local-check,Quota Buckets and Reservation,see executed report; no hosted CI claim
+TQ-7,L-41,DEFERRED,docs/test-plan.md,docs/skill-evaluations.md,local-check,Obsidian Knowledge Structure,see executed report; no hosted CI claim
+TQ-8,L-39,DEFERRED,docs/test-plan.md,src/test/java/org/example/videocurator/domain/DomainTest.java,local-check,CI Fixture Isolation,see executed report; no hosted CI claim
+SB-1,L-03,DEFERRED,brain/index.md,scripts/validate_docs.py,brain-refine,Obsidian Knowledge Structure,local artifacts validated
+SB-2,L-03,DEFERRED,brain/projects/Video Intelligence MCP/Stage 4 Review.md,scripts/validate_docs.py,brain-refine,Obsidian Knowledge Structure,local artifacts validated
+SB-3,L-03,DEFERRED,docs/adr/0001.md,scripts/validate_docs.py,brain-refine,Obsidian Knowledge Structure,local artifacts validated
+SB-4,https://github.com/Infra77/youtube-mcp-server/issues/1,DEFERRED,AGENTS.md,scripts/validate_docs.py,brain-refine,Obsidian Knowledge Structure,M1-S01 bootstrap implemented; peer review and team completion pending
+SB-5,https://github.com/Infra77/youtube-mcp-server/issues/1,DEFERRED,docs/acceptance-status.md,scripts/validate_docs.py,brain-refine,Obsidian Knowledge Structure,M1-S01 bootstrap implemented; peer review and team completion pending
+SB-6,https://github.com/Infra77/youtube-mcp-server/issues/1,DEFERRED,docs/acceptance-status.md,scripts/validate_docs.py,brain-refine,Obsidian Knowledge Structure,M1-S01 bootstrap implemented; peer review and team completion pending
+SE-1,L-07,DEFERRED,docs/SRS.md,scripts/validate_traceability.py,brain-query,Codex Project Boundaries,local artifacts; human review pending
+SE-2,L-10,DEFERRED,docs/architecture.md,scripts/validate_traceability.py,brain-query,Codex Project Boundaries,local artifacts; human review pending
+SE-3,L-10,DEFERRED,docs/adr/0001.md,scripts/validate_traceability.py,brain-query,Codex Project Boundaries,local artifacts; human review pending
+SE-4,https://github.com/Infra77/youtube-mcp-server/issues/1,DEFERRED,docs/development-plan.md,scripts/validate_traceability.py,brain-query,Codex Project Boundaries,M1-S01 bootstrap implemented; peer review and team completion pending
+SE-5,https://github.com/Infra77/youtube-mcp-server/issues/1,DEFERRED,docs/traceability.csv,scripts/validate_traceability.py,brain-query,Codex Project Boundaries,M1-S01 bootstrap implemented; peer review and team completion pending
+SE-6,L-10,DEFERRED,src/main/java/org/example/videocurator/provider/YouTubeProvider.java,scripts/validate_traceability.py,brain-query,Codex Project Boundaries,local artifacts; human review pending
+SE-7,L-10,DEFERRED,docs/mcp-api.md,scripts/validate_traceability.py,brain-query,Codex Project Boundaries,local artifacts; human review pending
+SK-01,L-35,DEFERRED,.agents/skills/brain-ingest/SKILL.md,docs/skill-evaluations.md,brain-ingest,Obsidian Knowledge Structure,see authored workflow evaluation; independent host evaluation pending
+SK-02,L-35,DEFERRED,.agents/skills/brain-refine/SKILL.md,docs/skill-evaluations.md,brain-refine,Obsidian Knowledge Structure,see authored workflow evaluation; independent host evaluation pending
+SK-03,L-35,DEFERRED,.agents/skills/brain-query/SKILL.md,docs/skill-evaluations.md,brain-query,Obsidian Knowledge Structure,see authored workflow evaluation; independent host evaluation pending
+SK-04,L-35,DEFERRED,.agents/skills/local-check/SKILL.md,docs/skill-evaluations.md,local-check,Obsidian Knowledge Structure,see authored workflow evaluation; independent host evaluation pending
+SK-05,L-35,DEFERRED,.agents/skills/video-to-playlist/SKILL.md,docs/skill-evaluations.md,video-to-playlist,Obsidian Knowledge Structure,see authored workflow evaluation; independent host evaluation pending
+NFR-01,L-36,DEFERRED,docs/SRS.md,src/test/java/org/example/videocurator/SemanticsTest.java,local-check,Google OAuth Desktop PKCE,local evidence; live/manual aspects pending as applicable
+NFR-02,L-36,DEFERRED,docs/SRS.md,src/test/java/org/example/videocurator/domain/DomainTest.java,local-check,TF-IDF and Cosine Similarity,local evidence; live/manual aspects pending as applicable
+NFR-03,L-36,DEFERRED,docs/SRS.md,src/test/java/org/example/videocurator/McpProtocolIT.java,local-check,TF-IDF and Cosine Similarity,local evidence; live/manual aspects pending as applicable
+NFR-04,L-36,DEFERRED,docs/SRS.md,src/test/java/org/example/videocurator/DatabaseIT.java,local-check,Quota Buckets and Reservation,local evidence; live/manual aspects pending as applicable
+NFR-05,L-36,DEFERRED,docs/SRS.md,src/test/java/org/example/videocurator/DatabaseIT.java,local-check,Playlist Approval Invariants,local evidence; live/manual aspects pending as applicable
+NFR-06,L-36,DEFERRED,docs/SRS.md,src/test/java/org/example/videocurator/McpProtocolIT.java,local-check,CI Fixture Isolation,local evidence; live/manual aspects pending as applicable
+NFR-07,L-36,DEFERRED,docs/SRS.md,src/test/java/org/example/videocurator/DatabaseIT.java,local-check,Google OAuth Desktop PKCE,local evidence; live/manual aspects pending as applicable
+NFR-08,L-36,DEFERRED,docs/SRS.md,src/test/java/org/example/videocurator/ProviderTest.java,local-check,YouTube Endpoint Matrix,local evidence; live/manual aspects pending as applicable
+NFR-09,L-36,DEFERRED,docs/SRS.md,src/test/java/org/example/videocurator/ServiceTest.java,local-check,Quota Buckets and Reservation,local evidence; live/manual aspects pending as applicable
+NFR-10,L-36,DEFERRED,docs/SRS.md,src/test/java/org/example/videocurator/McpProtocolIT.java,local-check,MCP Stdio Semantics,local evidence; live/manual aspects pending as applicable

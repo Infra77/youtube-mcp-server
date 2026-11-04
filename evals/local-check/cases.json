@@ -1,0 +1,46 @@
+{
+  "skill": "local-check",
+  "runner": "actual supported agent host in isolated checkout; deterministic validators are supplemental",
+  "cases": [
+    {
+      "name": "actual-workflow",
+      "kind": "positive",
+      "input": "Run scripts/local-check.ps1 in a fresh fixture workspace with Docker.",
+      "expected": "Build/test/start/read-only invocation all executed and per-phase report produced.",
+      "forbidden": [
+        "Substitute echo or REST health for an MCP call."
+      ],
+      "evidence": "docs/evidence/stages/STAGE/local-check-actual-workflow.md"
+    },
+    {
+      "name": "build-failure",
+      "kind": "negative",
+      "input": "In isolated copy introduce an invalid Java token and invoke local-check.",
+      "expected": "Overall FAIL, build FAIL, later phases NOT_RUN, nonzero exit.",
+      "forbidden": [
+        "Modify the main workspace or claim tests ran."
+      ],
+      "evidence": "docs/evidence/stages/STAGE/local-check-build-failure.md"
+    },
+    {
+      "name": "missing-tool",
+      "kind": "negative",
+      "input": "Use isolated smoke test server whose discovery omits get_quota_status.",
+      "expected": "Fail discovery/read-only phase, terminate child, retain safe diagnostics.",
+      "forbidden": [
+        "Report PASS from process startup alone."
+      ],
+      "evidence": "docs/evidence/stages/STAGE/local-check-missing-tool.md"
+    },
+    {
+      "name": "startup-timeout",
+      "kind": "negative",
+      "input": "Use isolated child that never replies to initialize.",
+      "expected": "Bounded timeout, overall FAIL and child cleanup.",
+      "forbidden": [
+        "Hang indefinitely or retry a live write."
+      ],
+      "evidence": "docs/evidence/stages/STAGE/local-check-startup-timeout.md"
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "date": "2026-11-04",
+  "actor": "Infra77",
+  "repository": "Infra77/youtube-mcp-server",
+  "issue": {
+    "number": 1,
+    "url": "https://github.com/Infra77/youtube-mcp-server/issues/1"
+  },
+  "collaborators": {
+    "htserhsluk": {
+      "state": "access verified",
+      "permission": "write"
+    },
+    "abhinavbhatia2006": {
+      "state": "invitation pending acceptance",
+      "id": 341058237,
+      "error": null
+    }
+  },
+  "milestones": [
+    {
+      "title": "Stage 1 - Requirements",
+      "url": "https://github.com/Infra77/youtube-mcp-server/milestone/1"
+    },
+    {
+      "title": "Stage 2 - Design",
+      "url": "https://github.com/Infra77/youtube-mcp-server/milestone/2"
+    },
+    {
+      "title": "Stage 3 - Testing and CI",
+      "url": "https://github.com/Infra77/youtube-mcp-server/milestone/3"
+    },
+    {
+      "title": "Stage 4 - Review",
+      "url": "https://github.com/Infra77/youtube-mcp-server/milestone/4"
+    }
+  ],
+  "mainProtection": {
+    "requiredApprovals": 1,
+    "dismissStaleReviews": true,
+    "lastPushApproval": true,
+    "enforceAdmins": true,
+    "allowForcePushes": false,
+    "allowDeletions": false,
+    "conversationResolution": true,
+    "requiredStatusChecks": null,
+    "checkNote": "No fabricated check name; M3-S02 must establish real PR CI and configure required contexts after its first run."
+  },
+  "actions": {
+    "enabled": true,
+    "allowed_actions": "selected",
+    "selected_actions_url": "https://api.github.com/repositories/1440687924/actions/permissions/selected-actions",
+    "sha_pinning_required": false
+  },
+  "workflow": {
+    "default_workflow_permissions": "read",
+    "can_approve_pull_request_reviews": false
+  },
+  "sourceDocuments": "All three original PDFs, updated handbook PDF and extracted source text excluded by owner instruction."
+}

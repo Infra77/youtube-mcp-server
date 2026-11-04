@@ -1,0 +1,86 @@
+{
+  "evaluationDate": "2026-11-01",
+  "evaluator": "Codex authoring agent plus deterministic workflow checks",
+  "independentAgentEvaluation": false,
+  "liveGoogleUsed": false,
+  "results": [
+    {
+      "skill": "brain-ingest",
+      "case": "undated-source",
+      "status": "PASS",
+      "evidence": "Isolated note and source in target/skill-evals/2026-11-01; no fabricated author/date."
+    },
+    {
+      "skill": "brain-ingest",
+      "case": "missing-source",
+      "status": "PASS",
+      "evidence": "Source absence recorded; no invented research note."
+    },
+    {
+      "skill": "brain-refine",
+      "case": "move-preserves-source",
+      "status": "PASS",
+      "evidence": "Moved inbox note to resources without changing provenance or basename."
+    },
+    {
+      "skill": "brain-refine",
+      "case": "conflicting-evidence",
+      "status": "PASS",
+      "evidence": "Both claims preserved; discrepancy explicitly documented."
+    },
+    {
+      "skill": "brain-query",
+      "case": "grounded-answer",
+      "status": "PASS",
+      "evidence": "Authoring-agent answer written after reading the actual quota note; source and uncertainty cited."
+    },
+    {
+      "skill": "brain-query",
+      "case": "unsupported-question",
+      "status": "PASS",
+      "evidence": "Declined to invent viewing history or infer it from publication metadata."
+    },
+    {
+      "skill": "brain-refine",
+      "case": "validated-result",
+      "status": "PASS",
+      "evidence": "{\n  \"status\": \"PASS\",\n  \"notes\": 23,\n  \"researchNotes\": 16,\n  \"skills\": 5,\n  \"errors\": []\n}"
+    },
+    {
+      "skill": "brain-refine",
+      "case": "broken-link-detected",
+      "status": "PASS",
+      "evidence": "Validator rejected deliberately broken link in isolated evaluation vault."
+    },
+    {
+      "skill": "video-to-playlist",
+      "case": "fixture-orchestration-order",
+      "status": "PASS",
+      "evidence": "Maintained SDK trace: overview \u2192 similarity \u2192 draft \u2192 guarded commit. Grant is test-only simulation, not real user consent."
+    },
+    {
+      "skill": "video-to-playlist",
+      "case": "missing-approval",
+      "status": "PASS",
+      "evidence": "Actual MCP call returned APPROVAL_REQUIRED; DatabaseIT separately asserts zero provider writes."
+    },
+    {
+      "skill": "video-to-playlist",
+      "case": "truthful-fixture-result",
+      "status": "PASS",
+      "evidence": "Successful fixture results contain no fabricated live playlist URL."
+    },
+    {
+      "skill": "local-check",
+      "case": "historical-build-failure",
+      "status": "PASS",
+      "evidence": "Actual first failing build retained in ignored local log; no PASS was substituted for it."
+    },
+    {
+      "skill": "local-check",
+      "case": "executed-workflow",
+      "status": "PASS",
+      "evidence": "target/evidence/local-check.json: build, tests, documentation, server startup and read-only MCP invocation."
+    }
+  ]
+}

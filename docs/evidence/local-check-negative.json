@@ -1,0 +1,5 @@
+{
+  "status": "PASS",
+  "cases": 10,
+  "scope": "coordinator failure, missing command/timeout propagation; real host skill evaluations remain separate"
+}

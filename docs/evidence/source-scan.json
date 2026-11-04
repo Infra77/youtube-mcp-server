@@ -1,0 +1,6 @@
+{
+  "status": "PASS",
+  "selfTest": "PASS",
+  "findings": [],
+  "scope": "source files only; excludes local credentials, dependency cache, build output and supplied source text"
+}

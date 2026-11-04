@@ -1,0 +1,6 @@
+title = "Educational curator - generated artifacts excluded; source rules unchanged"
+[extend]
+useDefault = true
+[[allowlists]]
+description = "Dependencies, private runtime state and generated output are not source"
+paths = ['''(^|/)(\.tools|\.local|target|release|\.git)/''']

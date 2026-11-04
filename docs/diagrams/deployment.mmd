@@ -1,0 +1,16 @@
+flowchart LR
+ subgraph Windows[Authorized Windows workstation]
+  Human[Human operator] --> Host[Existing AI host]
+  Host -->|launch child; JSON RPC stdin| JVM[Java MCP process]
+  JVM -->|protocol stdout| Host
+  JVM -->|diagnostics stderr| Logs[Local diagnostics]
+  Human --> CLI[Separate OAuth and approval CLI]
+  JVM -->|JDBC loopback 55432| DB[(PostgreSQL Docker volume)]
+  CLI --> DB
+  CLI --> Vault[DPAPI CurrentUser credential file outside repository]
+  JVM --> Vault
+  CLI -->|temporary 127.0.0.1 callback| Browser[System browser]
+ end
+ Browser -->|consent| Google[Google OAuth]
+ JVM -->|HTTPS allowlisted requests; quota preflight| YouTube[Official YouTube API v3]
+ CLI -->|HTTPS authorization or repair| YouTube

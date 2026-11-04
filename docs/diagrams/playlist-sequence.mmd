@@ -1,0 +1,20 @@
+sequenceDiagram
+ actor Human
+ participant Host
+ participant MCP
+ participant DB as PostgreSQL
+ participant Google
+ Human->>Host: Natural-language constraints
+ Host->>MCP: plan_playlist
+ MCP->>DB: Reserve read quota
+ MCP->>Google: Search and hydrate
+ MCP->>DB: Persist immutable draft
+ MCP-->>Host: Full proposal and fingerprint
+ Host-->>Human: Review proposal
+ Human->>DB: CLI creates scoped approval
+ Host->>MCP: commit_playlist(draftId)
+ MCP->>DB: Atomic claim and full quota reserve
+ MCP->>DB: Journal write intent
+ MCP->>Google: Create and insert ordered items
+ MCP->>DB: Persist each result
+ MCP-->>Host: CREATED or partial/manual-review state

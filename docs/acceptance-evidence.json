@@ -1,0 +1,165 @@
+{
+  "schemaVersion": 1,
+  "gates": [
+    {
+      "id": "LOCAL_TESTS",
+      "kind": "local",
+      "status": "PASS",
+      "evidence": [
+        "docs/evidence/test-summary.json"
+      ],
+      "owner": "M1"
+    },
+    {
+      "id": "LOCAL_QUALITY",
+      "kind": "local",
+      "status": "PASS",
+      "evidence": [
+        "docs/evidence/local-check.json"
+      ],
+      "owner": "M2"
+    },
+    {
+      "id": "DEPENDENCIES",
+      "kind": "local",
+      "status": "PASS",
+      "evidence": [
+        "docs/evidence/dependency-audit.json"
+      ],
+      "owner": "M3"
+    },
+    {
+      "id": "PACKAGE",
+      "kind": "local",
+      "status": "PASS",
+      "evidence": [
+        "docs/evidence/package-check.json"
+      ],
+      "owner": "M1"
+    },
+    {
+      "id": "STAGE1_SKILLS",
+      "kind": "external",
+      "status": "PENDING",
+      "evidence": [],
+      "owner": "M3"
+    },
+    {
+      "id": "STAGE2_SKILLS",
+      "kind": "external",
+      "status": "PENDING",
+      "evidence": [],
+      "owner": "M1"
+    },
+    {
+      "id": "STAGE3_SKILLS",
+      "kind": "external",
+      "status": "PENDING",
+      "evidence": [],
+      "owner": "M2"
+    },
+    {
+      "id": "STAGE4_SKILLS",
+      "kind": "external",
+      "status": "PENDING",
+      "evidence": [],
+      "owner": "M3"
+    },
+    {
+      "id": "GOOGLE_LIFECYCLE",
+      "kind": "external",
+      "status": "PENDING",
+      "evidence": [],
+      "owner": "M1",
+      "partialEvidence": [
+        "docs/live-demo-status-2026-11-04.md"
+      ],
+      "remaining": "Complete all gate-specific checks and independent review in the updated plan; historical demonstrations alone are insufficient."
+    },
+    {
+      "id": "LIVE_FR1_FR5",
+      "kind": "external",
+      "status": "PENDING",
+      "evidence": [],
+      "owner": "M1",
+      "partialEvidence": [
+        "docs/live-demo-status-2026-11-04.md"
+      ],
+      "remaining": "Complete all gate-specific checks and independent review in the updated plan; historical demonstrations alone are insufficient."
+    },
+    {
+      "id": "HOST_DEMO",
+      "kind": "external",
+      "status": "PENDING",
+      "evidence": [],
+      "owner": "M2",
+      "partialEvidence": [
+        "docs/live-demo-status-2026-11-04.md"
+      ],
+      "remaining": "Complete all gate-specific checks and independent review in the updated plan; historical demonstrations alone are insufficient."
+    },
+    {
+      "id": "INDEPENDENT_MACHINE",
+      "kind": "external",
+      "status": "PENDING",
+      "evidence": [],
+      "owner": "M3"
+    },
+    {
+      "id": "HUMAN_REVIEW",
+      "kind": "external",
+      "status": "PENDING",
+      "evidence": [],
+      "owner": "ALL"
+    },
+    {
+      "id": "GITHUB_CONTROLS",
+      "kind": "external",
+      "status": "PENDING",
+      "evidence": [],
+      "owner": "M1"
+    },
+    {
+      "id": "TEAM_AUTHORSHIP",
+      "kind": "external",
+      "status": "PENDING",
+      "evidence": [],
+      "owner": "ALL"
+    },
+    {
+      "id": "FIXTURE_CI",
+      "kind": "external",
+      "status": "PENDING",
+      "evidence": [],
+      "owner": "M3"
+    },
+    {
+      "id": "SCHEDULED_LIVE",
+      "kind": "external",
+      "status": "PENDING",
+      "evidence": [],
+      "owner": "M1"
+    },
+    {
+      "id": "TRACEABILITY_COMPLETE",
+      "kind": "external",
+      "status": "PENDING",
+      "evidence": [],
+      "owner": "M2"
+    },
+    {
+      "id": "POLICY_REVIEW",
+      "kind": "external",
+      "status": "PENDING",
+      "evidence": [],
+      "owner": "M3"
+    },
+    {
+      "id": "RELEASE_SIGNOFF",
+      "kind": "external",
+      "status": "PENDING",
+      "evidence": [],
+      "owner": "ALL"
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "status": "PASS",
+  "requirements": 41,
+  "rows": 41,
+  "errors": [],
+  "note": "Validates trace links, not completion of explicitly pending live/human/GitHub gates."
+}
