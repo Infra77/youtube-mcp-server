@@ -7,7 +7,8 @@ abhinavbhatia2006, invitation pending acceptance; no M3-S01 PR available yet.
 Requirements: SB-4/5/6, SE-4/5. Handbook Steps 0-5, 8-9.
 Input main: a831da5355ff92832ef9f0991b26fad5343d4742.
 Issue: https://github.com/Infra77/youtube-mcp-server/issues/1
-Import PR: pending publication after staged scan. Merged SHA: pending review/merge.
+Import PR: https://github.com/Infra77/youtube-mcp-server/pull/2
+Baseline import commit: 3deb6b4395e685b2292d1fdfd8f9265a4b2af447. Merged SHA: pending review/merge.
 
 ## Implemented and observed
 
@@ -56,3 +57,7 @@ changes are an existing AI-assisted baseline, not fabricated 16-day development 
 source documents remain privately supplied to authorized teammates and are not covered by the
 repository MIT license. External notes and shared execution records distinguish actual observations
 from pending review. The canonical workspace plan has a portable snapshot at docs/team-plan.md.
+
+## Publication verification
+
+Aksha-Jain was pushed successfully and PR #2 opened against main with htserhsluk requested as reviewer. Exact staged content scan: 181 files, 886131 bytes, no leaks. Full local-check passed with 47 tests and no failures/errors/skips. No hosted CI run or human approval is claimed. The final documentation-only follow-up adds these real URLs and provenance to traceability.

@@ -20,3 +20,5 @@ See [[Codex Project Boundaries]] and [[CI Fixture Isolation]]. The durable execu
 human authorship or review. The responsible member must inspect and own the eventual commit.
 
 [Bootstrap issue](https://github.com/Infra77/youtube-mcp-server/issues/1) links this session to actual remote work.
+
+[Import PR](https://github.com/Infra77/youtube-mcp-server/pull/2) contains the existing baseline and bootstrap work; htserhsluk review requested. Commit 3deb6b4395e685b2292d1fdfd8f9265a4b2af447.

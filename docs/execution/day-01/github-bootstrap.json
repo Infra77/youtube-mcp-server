@@ -56,5 +56,11 @@
     "default_workflow_permissions": "read",
     "can_approve_pull_request_reviews": false
   },
-  "sourceDocuments": "All three original PDFs, updated handbook PDF and extracted source text excluded by owner instruction."
+  "sourceDocuments": "All three original PDFs, updated handbook PDF and extracted source text excluded by owner instruction.",
+  "branch": "Aksha-Jain",
+  "branchUrl": "https://github.com/Infra77/youtube-mcp-server/tree/Aksha-Jain",
+  "pullRequest": "https://github.com/Infra77/youtube-mcp-server/pull/2",
+  "baselineCommit": "3deb6b4395e685b2292d1fdfd8f9265a4b2af447",
+  "reviewRequested": "htserhsluk",
+  "merged": false
 }

@@ -4,7 +4,7 @@ Repository: https://github.com/Infra77/youtube-mcp-server
 
 | Member | Name | GitHub login | Status |
 |---|---|---|---|
-| M1 | Aksha Jain (user-supplied branch label) | Infra77 (authenticated and admin verified) | Import in progress; issue #1 |
+| M1 | Aksha Jain (user-supplied branch label) | Infra77 (authenticated and admin verified) | Branch pushed; PR #2 awaiting review |
 | M2 | Pending member-provided name | htserhsluk | Write access verified; assigned import review |
 | M3 | Pending member-provided name | abhinavbhatia2006 | Invitation pending acceptance; M3-S01 pending |
 
