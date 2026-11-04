@@ -1,0 +1,12 @@
+classDiagram
+ class YouTubeProvider { <<interface>> }
+ class FixtureYouTubeProvider
+ class OfficialYouTubeProvider
+ class CuratorService
+ class DraftStore
+ class QuotaService
+ YouTubeProvider <|.. FixtureYouTubeProvider
+ YouTubeProvider <|.. OfficialYouTubeProvider
+ CuratorService --> YouTubeProvider
+ CuratorService --> DraftStore
+ CuratorService --> QuotaService

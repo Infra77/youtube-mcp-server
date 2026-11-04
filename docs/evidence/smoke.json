@@ -1,0 +1,21 @@
+{
+  "status": "PASS",
+  "startServer": "PASS",
+  "initialize": "PASS",
+  "readOnlyTool": "PASS",
+  "protocolVersion": "2024-11-05",
+  "tools": [
+    "analyze_my_engagement",
+    "find_similar_channels",
+    "commit_playlist",
+    "get_playlist_draft",
+    "get_video_overview",
+    "plan_playlist",
+    "plan_playlist_from_text",
+    "get_quota_status",
+    "recommend_for_me",
+    "find_similar_videos"
+  ],
+  "resources": 5,
+  "fixture": true
+}

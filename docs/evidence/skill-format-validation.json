@@ -1,0 +1,13 @@
+{
+  "date": "2026-11-01",
+  "validator": "skill-creator/scripts/quick_validate.py",
+  "dependency": "project-local PyYAML 6.0.2",
+  "results": {
+    "brain-ingest": "PASS",
+    "brain-refine": "PASS",
+    "brain-query": "PASS",
+    "local-check": "PASS",
+    "video-to-playlist": "PASS"
+  },
+  "scope": "Frontmatter/naming validation only; workflow evidence is separate."
+}

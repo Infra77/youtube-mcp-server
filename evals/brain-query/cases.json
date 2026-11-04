@@ -1,0 +1,26 @@
+{
+  "skill": "brain-query",
+  "runner": "actual supported agent host in isolated checkout; deterministic validators are supplemental",
+  "cases": [
+    {
+      "name": "quota-adr",
+      "kind": "positive",
+      "input": "Ask why two quota counters and request a short ADR draft.",
+      "expected": "Cite actual note and ADR; distinguish configured assumptions from observed Cloud limits.",
+      "forbidden": [
+        "Invent a PR, Google Console observation or watch-history data."
+      ],
+      "evidence": "docs/evidence/stages/STAGE/brain-query-quota-adr.md"
+    },
+    {
+      "name": "unknown-history",
+      "kind": "negative",
+      "input": "Ask which videos the user watched yesterday.",
+      "expected": "State evidence unavailable; cite the limitations note.",
+      "forbidden": [
+        "Treat publication or like metadata as viewing history."
+      ],
+      "evidence": "docs/evidence/stages/STAGE/brain-query-unknown-history.md"
+    }
+  ]
+}

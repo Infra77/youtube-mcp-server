@@ -1,0 +1,901 @@
+[ {
+  "tools" : [ {
+    "name" : "analyze_my_engagement",
+    "title" : "analyze_my_engagement",
+    "description" : "Analyze sampled authorized collections. Optional periods use YYYY-MM-DD; publication dates are never like dates.",
+    "inputSchema" : {
+      "type" : "object",
+      "properties" : {
+        "startA" : {
+          "type" : "string"
+        },
+        "endA" : {
+          "type" : "string"
+        },
+        "startB" : {
+          "type" : "string"
+        },
+        "endB" : {
+          "type" : "string"
+        }
+      },
+      "required" : [ ]
+    },
+    "annotations" : {
+      "title" : "",
+      "readOnlyHint" : false,
+      "destructiveHint" : true,
+      "idempotentHint" : false,
+      "openWorldHint" : true
+    }
+  }, {
+    "name" : "find_similar_channels",
+    "title" : "find_similar_channels",
+    "description" : "Resolve channel ID, URL or @handle and rank metadata-similar channels.",
+    "inputSchema" : {
+      "type" : "object",
+      "properties" : {
+        "channelInput" : {
+          "type" : "string"
+        },
+        "limit" : {
+          "type" : "integer",
+          "format" : "int32"
+        }
+      },
+      "required" : [ "channelInput", "limit" ]
+    },
+    "annotations" : {
+      "title" : "",
+      "readOnlyHint" : false,
+      "destructiveHint" : true,
+      "idempotentHint" : false,
+      "openWorldHint" : true
+    }
+  }, {
+    "name" : "commit_playlist",
+    "title" : "commit_playlist",
+    "description" : "Create ONLY an exact draft already approved interactively by the human in the local CLI. No confirmed/account/token parameter is accepted.",
+    "inputSchema" : {
+      "type" : "object",
+      "properties" : {
+        "draftId" : {
+          "type" : "string"
+        }
+      },
+      "required" : [ "draftId" ]
+    },
+    "annotations" : {
+      "title" : "",
+      "readOnlyHint" : false,
+      "destructiveHint" : true,
+      "idempotentHint" : false,
+      "openWorldHint" : true
+    }
+  }, {
+    "name" : "get_playlist_draft",
+    "title" : "get_playlist_draft",
+    "description" : "Read exact persisted proposal, fingerprint, expiry and write status for selected account.",
+    "inputSchema" : {
+      "type" : "object",
+      "properties" : {
+        "draftId" : {
+          "type" : "string"
+        }
+      },
+      "required" : [ "draftId" ]
+    },
+    "annotations" : {
+      "title" : "",
+      "readOnlyHint" : false,
+      "destructiveHint" : true,
+      "idempotentHint" : false,
+      "openWorldHint" : true
+    }
+  }, {
+    "name" : "get_video_overview",
+    "title" : "get_video_overview",
+    "description" : "Read official video metadata. Overview is metadata-derived, never a transcript summary.",
+    "inputSchema" : {
+      "type" : "object",
+      "properties" : {
+        "videoInput" : {
+          "type" : "string",
+          "description" : "YouTube URL or 11-character video ID"
+        }
+      },
+      "required" : [ "videoInput" ]
+    },
+    "annotations" : {
+      "title" : "",
+      "readOnlyHint" : false,
+      "destructiveHint" : true,
+      "idempotentHint" : false,
+      "openWorldHint" : true
+    }
+  }, {
+    "name" : "plan_playlist",
+    "title" : "plan_playlist",
+    "description" : "Persist an immutable private playlist proposal. Does NOT create anything on YouTube. Language means declared audio-language metadata.",
+    "inputSchema" : {
+      "type" : "object",
+      "properties" : {
+        "topic" : {
+          "type" : "string"
+        },
+        "targetSeconds" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "maxVideoSeconds" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "language" : {
+          "type" : "string"
+        },
+        "maxVideos" : {
+          "type" : "integer",
+          "format" : "int32"
+        }
+      },
+      "required" : [ "topic", "targetSeconds", "maxVideoSeconds", "language", "maxVideos" ]
+    },
+    "annotations" : {
+      "title" : "",
+      "readOnlyHint" : false,
+      "destructiveHint" : true,
+      "idempotentHint" : false,
+      "openWorldHint" : true
+    }
+  }, {
+    "name" : "plan_playlist_from_text",
+    "title" : "plan_playlist_from_text",
+    "description" : "Parse bounded requests such as Make a 2-hour English playlist on Fourier transforms, maximum 20 minutes per video. Ambiguity returns NEEDS_CLARIFICATION.",
+    "inputSchema" : {
+      "type" : "object",
+      "properties" : {
+        "requestText" : {
+          "type" : "string"
+        }
+      },
+      "required" : [ "requestText" ]
+    },
+    "annotations" : {
+      "title" : "",
+      "readOnlyHint" : false,
+      "destructiveHint" : true,
+      "idempotentHint" : false,
+      "openWorldHint" : true
+    }
+  }, {
+    "name" : "get_quota_status",
+    "title" : "get_quota_status",
+    "description" : "Read local project quota ledger and Pacific reset date; does not call Google.",
+    "inputSchema" : {
+      "type" : "object",
+      "properties" : { },
+      "required" : [ ]
+    },
+    "annotations" : {
+      "title" : "",
+      "readOnlyHint" : false,
+      "destructiveHint" : true,
+      "idempotentHint" : false,
+      "openWorldHint" : true
+    }
+  }, {
+    "name" : "recommend_for_me",
+    "title" : "recommend_for_me",
+    "description" : "Recommend using the selected account's sampled likes, subscriptions and playlists, with coverage.",
+    "inputSchema" : {
+      "type" : "object",
+      "properties" : {
+        "limit" : {
+          "type" : "integer",
+          "format" : "int32"
+        }
+      },
+      "required" : [ "limit" ]
+    },
+    "annotations" : {
+      "title" : "",
+      "readOnlyHint" : false,
+      "destructiveHint" : true,
+      "idempotentHint" : false,
+      "openWorldHint" : true
+    }
+  }, {
+    "name" : "find_similar_videos",
+    "title" : "find_similar_videos",
+    "description" : "Rank locally computed metadata-similar videos, with component scores; no YouTube writes.",
+    "inputSchema" : {
+      "type" : "object",
+      "properties" : {
+        "videoInput" : {
+          "type" : "string"
+        },
+        "limit" : {
+          "type" : "integer",
+          "format" : "int32",
+          "description" : "1 through 20"
+        }
+      },
+      "required" : [ "videoInput", "limit" ]
+    },
+    "annotations" : {
+      "title" : "",
+      "readOnlyHint" : false,
+      "destructiveHint" : true,
+      "idempotentHint" : false,
+      "openWorldHint" : true
+    }
+  } ]
+}, {
+  "tool" : "get_quota_status",
+  "response" : {
+    "schemaVersion" : 1,
+    "requestId" : "34eb015f-b74a-4117-836e-41550b993af1",
+    "asOf" : "2026-11-03T08:20:08.331250200Z",
+    "fixture" : true,
+    "status" : "ok",
+    "data" : {
+      "buckets" : [ ],
+      "timezone" : "America/Los_Angeles",
+      "date" : "2026-11-03"
+    }
+  },
+  "arguments" : { }
+}, {
+  "tool" : "get_video_overview",
+  "response" : {
+    "schemaVersion" : 1,
+    "requestId" : "54d5837c-f24e-436f-a5df-6fb74e88dc2f",
+    "asOf" : "2026-11-03T08:20:08.429103300Z",
+    "fixture" : true,
+    "status" : "ok",
+    "data" : {
+      "warnings" : [ "Metadata-derived overview; no transcript downloaded or video watched." ],
+      "video" : {
+        "id" : "FIXTURE0001",
+        "title" : "Fourier transforms introduction",
+        "description" : "Synthetic mathematics tutorial metadata, not a real video.",
+        "channelId" : "UC0000000000000000000000",
+        "category" : "27",
+        "tags" : [ "Fourier", "math" ],
+        "seconds" : 600,
+        "language" : "en",
+        "url" : "https://www.youtube.com/watch?v=FIXTURE0001"
+      },
+      "overview" : "Fourier transforms introduction — Synthetic mathematics tutorial metadata, not a real video.",
+      "source" : "video_metadata",
+      "url" : "https://www.youtube.com/watch?v=FIXTURE0001"
+    }
+  },
+  "arguments" : {
+    "videoInput" : "FIXTURE0001"
+  }
+}, {
+  "tool" : "find_similar_videos",
+  "response" : {
+    "schemaVersion" : 1,
+    "requestId" : "282a6809-c1e1-40da-a93e-9c8fffdaa380",
+    "asOf" : "2026-11-03T08:20:08.528557400Z",
+    "fixture" : true,
+    "status" : "ok",
+    "data" : {
+      "warnings" : [ "Metadata similarity is computed locally; not YouTube's internal ranking." ],
+      "rankingVersion" : "tfidf-v1",
+      "candidates" : [ {
+        "video" : {
+          "id" : "FIXTURE0003",
+          "title" : "Fourier transforms numerical examples",
+          "description" : "Synthetic math and discrete signals.",
+          "channelId" : "UC0000000000000000000000",
+          "category" : "27",
+          "tags" : [ "Fourier", "math" ],
+          "seconds" : 1100,
+          "language" : "en",
+          "url" : "https://www.youtube.com/watch?v=FIXTURE0003"
+        },
+        "score" : 0.6525538278913641,
+        "components" : {
+          "duration" : 0.5454545454545454,
+          "text" : 0.45092431517438086,
+          "category" : 1.0,
+          "tags" : 1.0,
+          "language" : 1.0
+        }
+      }, {
+        "video" : {
+          "id" : "FIXTURE0007",
+          "title" : "Fourier long lecture",
+          "description" : "Synthetic over-length example.",
+          "channelId" : "UC0000000000000000000000",
+          "category" : "27",
+          "tags" : [ "Fourier" ],
+          "seconds" : 4000,
+          "language" : "en",
+          "url" : "https://www.youtube.com/watch?v=FIXTURE0007"
+        },
+        "score" : 0.39142783327529995,
+        "components" : {
+          "duration" : 0.15,
+          "text" : 0.22986878777327258,
+          "category" : 1.0,
+          "tags" : 0.5,
+          "language" : 1.0
+        }
+      }, {
+        "video" : {
+          "id" : "FIXTURE0002",
+          "title" : "Discrete convolution worked examples",
+          "description" : "Synthetic Fourier signal processing examples.",
+          "channelId" : "UC1111111111111111111111",
+          "category" : "27",
+          "tags" : [ "convolution", "Fourier" ],
+          "seconds" : 720,
+          "language" : "en",
+          "url" : "https://www.youtube.com/watch?v=FIXTURE0002"
+        },
+        "score" : 0.36995349693793805,
+        "components" : {
+          "duration" : 0.8333333333333334,
+          "text" : 0.12718817625079643,
+          "category" : 1.0,
+          "tags" : 0.3333333333333333,
+          "language" : 1.0
+        }
+      }, {
+        "video" : {
+          "id" : "FIXTURE0004",
+          "title" : "Signal processing convolution lesson",
+          "description" : "Synthetic educational metadata.",
+          "channelId" : "UC1111111111111111111111",
+          "category" : "27",
+          "tags" : [ ],
+          "seconds" : 1200,
+          "language" : "en",
+          "url" : "https://www.youtube.com/watch?v=FIXTURE0004"
+        },
+        "score" : 0.23093140862547162,
+        "components" : {
+          "duration" : 0.5,
+          "text" : 0.05623892477358473,
+          "category" : 1.0,
+          "tags" : 0.0,
+          "language" : 1.0
+        }
+      } ]
+    }
+  },
+  "arguments" : {
+    "limit" : 4,
+    "videoInput" : "FIXTURE0001"
+  }
+}, {
+  "tool" : "find_similar_channels",
+  "response" : {
+    "schemaVersion" : 1,
+    "requestId" : "8319dab4-23cf-49ca-86c4-3e9e2ace7d89",
+    "asOf" : "2026-11-03T08:20:08.642332600Z",
+    "fixture" : true,
+    "status" : "ok",
+    "data" : {
+      "channels" : [ {
+        "channel" : {
+          "id" : "UC1111111111111111111111",
+          "title" : "Fixture Signals",
+          "description" : "Fourier discrete signal processing",
+          "url" : "https://www.youtube.com/channel/UC1111111111111111111111"
+        },
+        "reason" : "title/description TF-IDF cosine",
+        "score" : 0.21078598118869626
+      }, {
+        "channel" : {
+          "id" : "UC2222222222222222222222",
+          "title" : "Fixture Cooking",
+          "description" : "Cooking banana recipes",
+          "url" : "https://www.youtube.com/channel/UC2222222222222222222222"
+        },
+        "reason" : "title/description TF-IDF cosine",
+        "score" : 0.06985875199805798
+      } ]
+    }
+  },
+  "arguments" : {
+    "limit" : 3,
+    "channelInput" : "@ExampleMath"
+  }
+}, {
+  "tool" : "recommend_for_me",
+  "response" : {
+    "schemaVersion" : 1,
+    "requestId" : "29be7bbf-de61-4c19-8028-d8ce10cfecb5",
+    "asOf" : "2026-11-03T08:20:08.730082600Z",
+    "fixture" : true,
+    "status" : "ok",
+    "data" : {
+      "recommendations" : [ {
+        "video" : {
+          "id" : "FIXTURE0003",
+          "title" : "Fourier transforms numerical examples",
+          "description" : "Synthetic math and discrete signals.",
+          "channelId" : "UC0000000000000000000000",
+          "category" : "27",
+          "tags" : [ "Fourier", "math" ],
+          "seconds" : 1100,
+          "language" : "en",
+          "url" : "https://www.youtube.com/watch?v=FIXTURE0003"
+        },
+        "score" : 0.6689628155539931,
+        "components" : {
+          "weightedProfileCosine" : 0.6689628155539931
+        }
+      }, {
+        "video" : {
+          "id" : "FIXTURE0007",
+          "title" : "Fourier long lecture",
+          "description" : "Synthetic over-length example.",
+          "channelId" : "UC0000000000000000000000",
+          "category" : "27",
+          "tags" : [ "Fourier" ],
+          "seconds" : 4000,
+          "language" : "en",
+          "url" : "https://www.youtube.com/watch?v=FIXTURE0007"
+        },
+        "score" : 0.4474720338717973,
+        "components" : {
+          "weightedProfileCosine" : 0.4474720338717973
+        }
+      }, {
+        "video" : {
+          "id" : "FIXTURE0004",
+          "title" : "Signal processing convolution lesson",
+          "description" : "Synthetic educational metadata.",
+          "channelId" : "UC1111111111111111111111",
+          "category" : "27",
+          "tags" : [ ],
+          "seconds" : 1200,
+          "language" : "en",
+          "url" : "https://www.youtube.com/watch?v=FIXTURE0004"
+        },
+        "score" : 0.2864654247260489,
+        "components" : {
+          "weightedProfileCosine" : 0.2864654247260489
+        }
+      } ],
+      "sources" : [ "likes", "subscriptions", "playlists" ],
+      "coverage" : {
+        "subscriptionsFetched" : 1,
+        "playlistsFetched" : 1,
+        "playlistItemsFetched" : 1,
+        "likesFetched" : 1,
+        "truncated" : false
+      },
+      "warnings" : [ "Sampled metadata interests; no watch history. Empty source weights contribute no evidence." ]
+    }
+  },
+  "arguments" : {
+    "limit" : 3
+  }
+}, {
+  "tool" : "analyze_my_engagement",
+  "response" : {
+    "schemaVersion" : 1,
+    "requestId" : "0cc3ae2b-2028-4889-ac72-ca624d531f12",
+    "asOf" : "2026-11-03T08:20:08.857021100Z",
+    "fixture" : true,
+    "status" : "ok",
+    "data" : {
+      "coverage" : {
+        "subscriptionsFetched" : 1,
+        "playlistsFetched" : 1,
+        "playlistItemsFetched" : 1,
+        "likesFetched" : 1,
+        "truncated" : false
+      },
+      "channelCounts" : {
+        "UC0000000000000000000000" : 1,
+        "UC1111111111111111111111" : 1
+      },
+      "categoryCounts" : {
+        "27" : 2
+      },
+      "subscriptionCounts" : {
+        "UC0000000000000000000000" : 1
+      },
+      "durationBins" : {
+        "medium_601_1200" : 1,
+        "short_0_600" : 1
+      },
+      "medianSeconds" : 660.0,
+      "trendsBySourceMonth" : {
+        "PLAYLIST_ITEM_ADDED_AT:2026-02" : 1,
+        "SUBSCRIPTION_ADDED_AT:2026-01" : 1
+      },
+      "unknownEventTimestamps" : 0,
+      "periodComparison" : {
+        "PLAYLIST_ITEM_ADDED_AT" : {
+          "periodB" : 1,
+          "periodA" : 0,
+          "status" : "sampled_events_only"
+        },
+        "SUBSCRIPTION_ADDED_AT" : {
+          "periodB" : 0,
+          "periodA" : 1,
+          "status" : "sampled_events_only"
+        }
+      },
+      "warnings" : [ "No watch history or like timestamps are available.", "Counts and trends describe sampled accessible records, not all viewing activity." ]
+    }
+  },
+  "arguments" : {
+    "endB" : "2026-03-01",
+    "startB" : "2026-02-01",
+    "startA" : "2026-01-01",
+    "endA" : "2026-02-01"
+  }
+}, {
+  "tool" : "plan_playlist",
+  "response" : {
+    "schemaVersion" : 1,
+    "requestId" : "f137dd4d-8388-4eab-a123-877fd8575902",
+    "asOf" : "2026-11-03T08:20:08.965484800Z",
+    "fixture" : true,
+    "status" : "ok",
+    "data" : {
+      "id" : "3c0c7c75-1e8c-425f-b96e-2628e0565f62",
+      "proposal" : {
+        "schemaVersion" : 2,
+        "account" : "fixture-account",
+        "title" : "Fourier transforms",
+        "privacy" : "private",
+        "constraints" : {
+          "topic" : "Fourier transforms",
+          "targetSeconds" : 1800,
+          "maxVideoSeconds" : 1200,
+          "language" : "en",
+          "maxVideos" : 3
+        },
+        "videos" : [ {
+          "id" : "FIXTURE0001",
+          "title" : "Fourier transforms introduction",
+          "description" : "Synthetic mathematics tutorial metadata, not a real video.",
+          "channelId" : "UC0000000000000000000000",
+          "category" : "27",
+          "tags" : [ "Fourier", "math" ],
+          "seconds" : 600,
+          "language" : "en",
+          "url" : "https://www.youtube.com/watch?v=FIXTURE0001"
+        }, {
+          "id" : "FIXTURE0003",
+          "title" : "Fourier transforms numerical examples",
+          "description" : "Synthetic math and discrete signals.",
+          "channelId" : "UC0000000000000000000000",
+          "category" : "27",
+          "tags" : [ "Fourier", "math" ],
+          "seconds" : 1100,
+          "language" : "en",
+          "url" : "https://www.youtube.com/watch?v=FIXTURE0003"
+        } ],
+        "totalSeconds" : 1700,
+        "shortfallSeconds" : 100,
+        "expiresAt" : "2026-11-03T08:50:09.016801900Z",
+        "policy" : "greedy-local-swap-v1; strict declared audio-language metadata; total is upper bound",
+        "requestText" : "typed MCP constraints",
+        "exclusions" : {
+          "FIXTURE0002" : "CAPACITY",
+          "FIXTURE0007" : "DURATION"
+        }
+      },
+      "fingerprint" : "c1156fde37f4bef0f947c9f106b31225dcb7e4c5ea2dbda98e22fdcb56e62543",
+      "state" : "PROPOSED",
+      "remoteId" : null,
+      "journal" : [ ]
+    }
+  },
+  "arguments" : {
+    "topic" : "Fourier transforms",
+    "maxVideos" : 3,
+    "language" : "en",
+    "maxVideoSeconds" : 1200,
+    "targetSeconds" : 1800
+  }
+}, {
+  "tool" : "commit_playlist",
+  "response" : {
+    "schemaVersion" : 1,
+    "requestId" : "f816c2ad-81f3-4786-ba0a-1e261f5d7fdf",
+    "asOf" : "2026-11-03T08:20:09.118576700Z",
+    "fixture" : true,
+    "status" : "error",
+    "code" : "APPROVAL_REQUIRED",
+    "message" : "Approve the exact draft locally; ambiguous prior writes require manual review.",
+    "retryable" : false
+  },
+  "arguments" : {
+    "draftId" : "3c0c7c75-1e8c-425f-b96e-2628e0565f62"
+  }
+}, {
+  "tool" : "get_playlist_draft",
+  "response" : {
+    "schemaVersion" : 1,
+    "requestId" : "aed26ed3-0c45-40cd-9dfb-f8b88e24e1fb",
+    "asOf" : "2026-11-03T08:20:09.184616100Z",
+    "fixture" : true,
+    "status" : "ok",
+    "data" : {
+      "id" : "3c0c7c75-1e8c-425f-b96e-2628e0565f62",
+      "proposal" : {
+        "schemaVersion" : 2,
+        "account" : "fixture-account",
+        "title" : "Fourier transforms",
+        "privacy" : "private",
+        "constraints" : {
+          "topic" : "Fourier transforms",
+          "targetSeconds" : 1800,
+          "maxVideoSeconds" : 1200,
+          "language" : "en",
+          "maxVideos" : 3
+        },
+        "videos" : [ {
+          "id" : "FIXTURE0001",
+          "title" : "Fourier transforms introduction",
+          "description" : "Synthetic mathematics tutorial metadata, not a real video.",
+          "channelId" : "UC0000000000000000000000",
+          "category" : "27",
+          "tags" : [ "Fourier", "math" ],
+          "seconds" : 600,
+          "language" : "en",
+          "url" : "https://www.youtube.com/watch?v=FIXTURE0001"
+        }, {
+          "id" : "FIXTURE0003",
+          "title" : "Fourier transforms numerical examples",
+          "description" : "Synthetic math and discrete signals.",
+          "channelId" : "UC0000000000000000000000",
+          "category" : "27",
+          "tags" : [ "Fourier", "math" ],
+          "seconds" : 1100,
+          "language" : "en",
+          "url" : "https://www.youtube.com/watch?v=FIXTURE0003"
+        } ],
+        "totalSeconds" : 1700,
+        "shortfallSeconds" : 100,
+        "expiresAt" : "2026-11-03T08:50:09.016801900Z",
+        "policy" : "greedy-local-swap-v1; strict declared audio-language metadata; total is upper bound",
+        "requestText" : "typed MCP constraints",
+        "exclusions" : {
+          "FIXTURE0002" : "CAPACITY",
+          "FIXTURE0007" : "DURATION"
+        }
+      },
+      "fingerprint" : "c1156fde37f4bef0f947c9f106b31225dcb7e4c5ea2dbda98e22fdcb56e62543",
+      "state" : "PROPOSED",
+      "remoteId" : null,
+      "journal" : [ ]
+    }
+  },
+  "arguments" : {
+    "draftId" : "3c0c7c75-1e8c-425f-b96e-2628e0565f62"
+  }
+}, {
+  "tool" : "commit_playlist",
+  "response" : {
+    "schemaVersion" : 1,
+    "requestId" : "143b00e0-4588-4b87-a163-d08365695e97",
+    "asOf" : "2026-11-03T08:20:09.389578500Z",
+    "fixture" : true,
+    "status" : "ok",
+    "data" : {
+      "state" : "CREATED",
+      "draftId" : "3c0c7c75-1e8c-425f-b96e-2628e0565f62",
+      "journal" : [ {
+        "step" : "000-create",
+        "status" : "CONFIRMED",
+        "remote_id" : "fixture-playlist-f08ea8d1-f5ac-4ab0-a2da-c999d3de26be",
+        "error_code" : null
+      }, {
+        "step" : "001-item",
+        "status" : "CONFIRMED",
+        "remote_id" : "fixture-item-0",
+        "error_code" : null
+      }, {
+        "step" : "002-item",
+        "status" : "CONFIRMED",
+        "remote_id" : "fixture-item-1",
+        "error_code" : null
+      } ],
+      "fixture" : true,
+      "playlistId" : "fixture-playlist-f08ea8d1-f5ac-4ab0-a2da-c999d3de26be",
+      "playlistUrl" : "",
+      "proposedTotalSeconds" : 1700,
+      "proposedItemCount" : 2,
+      "confirmedItemCount" : 2,
+      "confirmedTotalSeconds" : 1700,
+      "items" : [ {
+        "status" : "CONFIRMED",
+        "position" : 0,
+        "url" : "https://www.youtube.com/watch?v=FIXTURE0001",
+        "videoId" : "FIXTURE0001"
+      }, {
+        "status" : "CONFIRMED",
+        "position" : 1,
+        "url" : "https://www.youtube.com/watch?v=FIXTURE0003",
+        "videoId" : "FIXTURE0003"
+      } ],
+      "warning" : "Synthetic fixture result; no YouTube playlist was created."
+    }
+  },
+  "arguments" : {
+    "draftId" : "3c0c7c75-1e8c-425f-b96e-2628e0565f62"
+  }
+}, {
+  "tool" : "commit_playlist",
+  "response" : {
+    "schemaVersion" : 1,
+    "requestId" : "be8188dd-00f0-4e6d-aa82-fdf1e7273e29",
+    "asOf" : "2026-11-03T08:20:09.523892Z",
+    "fixture" : true,
+    "status" : "ok",
+    "data" : {
+      "state" : "CREATED",
+      "draftId" : "3c0c7c75-1e8c-425f-b96e-2628e0565f62",
+      "journal" : [ {
+        "step" : "000-create",
+        "status" : "CONFIRMED",
+        "remote_id" : "fixture-playlist-f08ea8d1-f5ac-4ab0-a2da-c999d3de26be",
+        "error_code" : null
+      }, {
+        "step" : "001-item",
+        "status" : "CONFIRMED",
+        "remote_id" : "fixture-item-0",
+        "error_code" : null
+      }, {
+        "step" : "002-item",
+        "status" : "CONFIRMED",
+        "remote_id" : "fixture-item-1",
+        "error_code" : null
+      } ],
+      "fixture" : true,
+      "playlistId" : "fixture-playlist-f08ea8d1-f5ac-4ab0-a2da-c999d3de26be",
+      "playlistUrl" : "",
+      "proposedTotalSeconds" : 1700,
+      "proposedItemCount" : 2,
+      "confirmedItemCount" : 2,
+      "confirmedTotalSeconds" : 1700,
+      "items" : [ {
+        "status" : "CONFIRMED",
+        "position" : 0,
+        "url" : "https://www.youtube.com/watch?v=FIXTURE0001",
+        "videoId" : "FIXTURE0001"
+      }, {
+        "status" : "CONFIRMED",
+        "position" : 1,
+        "url" : "https://www.youtube.com/watch?v=FIXTURE0003",
+        "videoId" : "FIXTURE0003"
+      } ],
+      "warning" : "Synthetic fixture result; no YouTube playlist was created."
+    }
+  },
+  "arguments" : {
+    "draftId" : "3c0c7c75-1e8c-425f-b96e-2628e0565f62"
+  }
+}, {
+  "tool" : "plan_playlist_from_text",
+  "response" : {
+    "schemaVersion" : 1,
+    "requestId" : "9e74fe38-57d3-49db-bb21-e5520072a492",
+    "asOf" : "2026-11-03T08:20:09.536170100Z",
+    "fixture" : true,
+    "status" : "ok",
+    "data" : {
+      "id" : "41cec45e-57bf-4161-8741-463a59eab3d1",
+      "proposal" : {
+        "schemaVersion" : 2,
+        "account" : "fixture-account",
+        "title" : "Fourier transforms",
+        "privacy" : "private",
+        "constraints" : {
+          "topic" : "Fourier transforms",
+          "targetSeconds" : 7200,
+          "maxVideoSeconds" : 1200,
+          "language" : "en",
+          "maxVideos" : 50
+        },
+        "videos" : [ {
+          "id" : "FIXTURE0001",
+          "title" : "Fourier transforms introduction",
+          "description" : "Synthetic mathematics tutorial metadata, not a real video.",
+          "channelId" : "UC0000000000000000000000",
+          "category" : "27",
+          "tags" : [ "Fourier", "math" ],
+          "seconds" : 600,
+          "language" : "en",
+          "url" : "https://www.youtube.com/watch?v=FIXTURE0001"
+        }, {
+          "id" : "FIXTURE0003",
+          "title" : "Fourier transforms numerical examples",
+          "description" : "Synthetic math and discrete signals.",
+          "channelId" : "UC0000000000000000000000",
+          "category" : "27",
+          "tags" : [ "Fourier", "math" ],
+          "seconds" : 1100,
+          "language" : "en",
+          "url" : "https://www.youtube.com/watch?v=FIXTURE0003"
+        }, {
+          "id" : "FIXTURE0002",
+          "title" : "Discrete convolution worked examples",
+          "description" : "Synthetic Fourier signal processing examples.",
+          "channelId" : "UC1111111111111111111111",
+          "category" : "27",
+          "tags" : [ "convolution", "Fourier" ],
+          "seconds" : 720,
+          "language" : "en",
+          "url" : "https://www.youtube.com/watch?v=FIXTURE0002"
+        } ],
+        "totalSeconds" : 2420,
+        "shortfallSeconds" : 4780,
+        "expiresAt" : "2026-11-03T08:50:09.574079400Z",
+        "policy" : "greedy-local-swap-v1; strict declared audio-language metadata; total is upper bound",
+        "requestText" : "Make a 2-hour English playlist on Fourier transforms, maximum 20 minutes per video",
+        "exclusions" : {
+          "FIXTURE0007" : "DURATION"
+        }
+      },
+      "fingerprint" : "a24fae0168b12f80a7c5d86b5b8972009155b973928ebc4393c35144035fa28b",
+      "state" : "PROPOSED",
+      "remoteId" : null,
+      "journal" : [ ]
+    }
+  },
+  "arguments" : {
+    "requestText" : "Make a 2-hour English playlist on Fourier transforms, maximum 20 minutes per video"
+  }
+}, {
+  "tool" : "plan_playlist_from_text",
+  "response" : {
+    "schemaVersion" : 1,
+    "requestId" : "ccbfb9be-42c1-4a8f-87ae-3434b46483b8",
+    "asOf" : "2026-11-03T08:20:09.604880700Z",
+    "fixture" : true,
+    "status" : "error",
+    "code" : "NEEDS_CLARIFICATION",
+    "message" : "Use: Make a 2-hour English playlist on Fourier transforms, maximum 20 minutes per video; or provide typed constraints.",
+    "retryable" : false
+  },
+  "arguments" : {
+    "requestText" : "Make a playlist"
+  }
+}, {
+  "tool" : "find_similar_videos",
+  "response" : {
+    "schemaVersion" : 1,
+    "requestId" : "7109a652-4e65-40be-be31-1072a0fed12b",
+    "asOf" : "2026-11-03T08:20:09.608777100Z",
+    "fixture" : true,
+    "status" : "error",
+    "code" : "INVALID_INPUT",
+    "message" : "Invalid YouTube URL.",
+    "retryable" : false
+  },
+  "arguments" : {
+    "limit" : 5,
+    "videoInput" : "bad"
+  }
+}, {
+  "tool" : "get_video_overview",
+  "response" : {
+    "schemaVersion" : 1,
+    "requestId" : "b6b527f0-e170-45ba-982f-296f735444fe",
+    "asOf" : "2026-11-03T08:20:09.612772400Z",
+    "fixture" : true,
+    "status" : "error",
+    "code" : "VIDEO_UNAVAILABLE",
+    "message" : "Video is unavailable or private.",
+    "retryable" : false
+  },
+  "arguments" : {
+    "videoInput" : "DELETED0000"
+  }
+} ]

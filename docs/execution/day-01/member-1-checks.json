@@ -1,0 +1,94 @@
+{
+  "date": "2026-11-04",
+  "package": "M1-S01",
+  "status": "PASS",
+  "command": "scripts/local-check.ps1",
+  "pipeline": {
+    "timestamp": "2026-11-04T09:50:58.841874+00:00",
+    "mode": "fixture",
+    "overall": "PASS",
+    "build": "PASS",
+    "tests": "PASS",
+    "formatting": "PASS",
+    "documentation": "PASS",
+    "traceability": "PASS",
+    "skillSchema": "PASS",
+    "secretScan": "PASS",
+    "startServerAndReadOnlyTool": "PASS",
+    "startServer": "PASS",
+    "readOnlyTool": "PASS"
+  },
+  "totals": {
+    "tests": 47,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "suites": [
+    {
+      "name": "org.example.videocurator.domain.DomainTest",
+      "tests": 8,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "org.example.videocurator.domain.RankingEvaluationTest",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "org.example.videocurator.MetadataCacheTest",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "org.example.videocurator.oauth.OAuthLifecycleTest",
+      "tests": 7,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "org.example.videocurator.ProviderTest",
+      "tests": 10,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "org.example.videocurator.SemanticsTest",
+      "tests": 3,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "org.example.videocurator.ServiceTest",
+      "tests": 2,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "org.example.videocurator.DatabaseIT",
+      "tests": 14,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "org.example.videocurator.McpProtocolIT",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    }
+  ],
+  "scope": "Executed on original workstation; fixture-only tests, actual PostgreSQL containers and packaged MCP. Not hosted CI, independent-machine evidence or peer signoff.",
+  "initialFailure": "Docker engine initially unavailable, then recovered; full pipeline rerun passed."
+}

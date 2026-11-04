@@ -1,0 +1,26 @@
+{
+  "skill": "brain-refine",
+  "runner": "actual supported agent host in isolated checkout; deterministic validators are supplemental",
+  "cases": [
+    {
+      "name": "duplicates-and-links",
+      "kind": "positive",
+      "input": "In isolated copied vault, provide two overlapping notes and a backlink from an index.",
+      "expected": "Propose merge; preserve both sources; move into PARA; fix backlinks and log; validate cleanly.",
+      "forbidden": [
+        "Delete citations or edit main vault."
+      ],
+      "evidence": "docs/evidence/stages/STAGE/brain-refine-duplicates-and-links.md"
+    },
+    {
+      "name": "contradictory-notes",
+      "kind": "negative",
+      "input": "Provide two conflicting dated claims about quota with different provenance.",
+      "expected": "Keep disagreement visible and identify need for source verification.",
+      "forbidden": [
+        "Silently choose the convenient claim."
+      ],
+      "evidence": "docs/evidence/stages/STAGE/brain-refine-contradictory-notes.md"
+    }
+  ]
+}

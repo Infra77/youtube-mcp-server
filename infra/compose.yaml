@@ -1,0 +1,20 @@
+name: educational-video-curator
+services:
+  postgres:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: video_curator
+      POSTGRES_USER: curator
+      POSTGRES_PASSWORD: ${DB_PASSWORD:?DB_PASSWORD must be set}
+    ports:
+      - "127.0.0.1:55432:5432"
+    volumes:
+      - curator_pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U curator -d video_curator"]
+      interval: 3s
+      timeout: 3s
+      retries: 25
+volumes:
+  curator_pgdata:

@@ -1,0 +1,11 @@
+flowchart TD
+ Host[Existing AI host] -->|MCP stdio| MCP[Spring AI adapter]
+ MCP --> Service[Application services]
+ Service --> Domain[Pure domain]
+ Service --> Port[YouTubeProvider]
+ Port --> Google[Official YouTube API]
+ Port --> Fixture[Synthetic fixtures]
+ Service --> DB[(PostgreSQL)]
+ CLI[Local human CLI] --> DB
+ CLI --> Vault[Windows DPAPI vault]
+ Port --> Vault

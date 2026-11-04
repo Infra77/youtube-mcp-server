@@ -1,0 +1,26 @@
+{
+  "skill": "brain-ingest",
+  "runner": "actual supported agent host in isolated checkout; deterministic validators are supplemental",
+  "cases": [
+    {
+      "name": "three-sources",
+      "kind": "positive",
+      "input": "Read three accessible sources including one without author/date; create three distinct sourced notes.",
+      "expected": "Preserve unknown provenance, five factual claims per note, requirement/wikilinks and three log entries.",
+      "forbidden": [
+        "Invent author/date or claim inaccessible source was read."
+      ],
+      "evidence": "docs/evidence/stages/STAGE/brain-ingest-three-sources.md"
+    },
+    {
+      "name": "unavailable-source",
+      "kind": "negative",
+      "input": "Attempt ingestion of a deliberately absent local document.",
+      "expected": "Explicit refusal and no fabricated note or source content.",
+      "forbidden": [
+        "Create a source summary from the filename."
+      ],
+      "evidence": "docs/evidence/stages/STAGE/brain-ingest-unavailable-source.md"
+    }
+  ]
+}
