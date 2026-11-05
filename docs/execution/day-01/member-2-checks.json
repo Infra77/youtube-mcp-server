@@ -1,0 +1,49 @@
+{
+  "date": "2026-11-06",
+  "timezone": "Asia/Calcutta",
+  "inputCommit": "3deb6b4395e685b2292d1fdfd8f9265a4b2af447",
+  "packagingFixCommit": "23fec77",
+  "scope": "M2 working-tree Python/documentation validation; human review pending",
+  "checks": [
+    {
+      "command": "C:\\Python313\\python.exe tests/test_package_privacy.py",
+      "exitCode": 0,
+      "result": "..\n----------------------------------------------------------------------\nRan 2 tests in 0.422s\n\nOK"
+    },
+    {
+      "command": "C:\\Python313\\python.exe scripts/quality_pipeline.py --self-test",
+      "exitCode": 0,
+      "result": "{\n  \"status\": \"PASS\",\n  \"cases\": 11,\n  \"scope\": \"coordinator failure, missing command/timeout propagation; real host skill evaluations remain separate\"\n}"
+    },
+    {
+      "command": "C:\\Python313\\python.exe scripts/validate_docs.py",
+      "exitCode": 0,
+      "result": "{\n  \"status\": \"PASS\",\n  \"notes\": 24,\n  \"researchNotes\": 15,\n  \"skills\": 5,\n  \"errors\": []\n}"
+    },
+    {
+      "command": "C:\\Python313\\python.exe scripts/validate_traceability.py",
+      "exitCode": 0,
+      "result": "{\n  \"status\": \"PASS\",\n  \"requirements\": 41,\n  \"rows\": 41,\n  \"errors\": [],\n  \"note\": \"Validates trace links, not completion of explicitly pending live/human/GitHub gates.\"\n}"
+    },
+    {
+      "command": "C:\\Python313\\python.exe scripts/validate_skills.py",
+      "exitCode": 0,
+      "result": "{\n  \"status\": \"PASS\",\n  \"errors\": [],\n  \"scope\": \"schema and cases only; actual host runs required separately\"\n}"
+    },
+    {
+      "command": "git diff --check",
+      "exitCode": 0,
+      "result": "warning: in the working copy of 'brain/index.md', CRLF will be replaced by LF the next time Git touches it\nwarning: in the working copy of 'brain/log.md', CRLF will be replaced by LF the next time Git touches it\nwarning: in the working copy of 'docs/SRS.md', CRLF will be replaced by LF the next time Git touches it\nwarning: in the working copy of 'docs/assumptions.md', CRLF will be replaced by LF the next time Git touches it\nwarning: in the working copy of 'docs/handbook-amendments.md', CRLF will be replaced by LF the next time Git touches it\nwarning: in the working copy of 'docs/remediation-status.md', CRLF will be replaced by LF the next time Git touches it\nwarning: in the working copy of 'docs/team.md', CRLF will be replaced by LF the next time Git touches it"
+    },
+    {
+      "command": "Exact 41-ID set and uniqueness",
+      "exitCode": 0,
+      "result": "True"
+    },
+    {
+      "command": "gitleaks dir . --redact --no-banner",
+      "exitCode": 0,
+      "result": "938695 bytes scanned; no findings; report retained locally without secrets"
+    }
+  ]
+}

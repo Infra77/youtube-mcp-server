@@ -145,7 +145,12 @@
       "kind": "external",
       "status": "PENDING",
       "evidence": [],
-      "owner": "M2"
+      "owner": "M2",
+      "partialEvidence": [
+        "docs/source-obligation-ledger.md",
+        "docs/execution/day-01/member-2.md"
+      ],
+      "remaining": "Complete reviewed GitHub chains, semantic test evidence, all package dependencies and genuine human signoff; M2-S01 audit alone does not close this gate."
     },
     {
       "id": "POLICY_REVIEW",

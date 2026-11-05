@@ -24,3 +24,7 @@
 - [[Stage 2 Review]]
 - [[Stage 3 Review]]
 - [[Stage 4 Review]]
+
+## M2 source review
+- [[Client Obligations and Implementation Choices]]
+- [[M2 Packaging Privacy Fix]]

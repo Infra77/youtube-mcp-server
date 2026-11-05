@@ -5,8 +5,8 @@ Repository: https://github.com/Infra77/youtube-mcp-server
 | Member | Name | GitHub login | Status |
 |---|---|---|---|
 | M1 | Aksha Jain (user-supplied branch label) | Infra77 (authenticated and admin verified) | Import in progress; issue #1 |
-| M2 | Pending member-provided name | htserhsluk | Write access verified; assigned import review |
-| M3 | Pending member-provided name | abhinavbhatia2006 | Invitation pending acceptance; M3-S01 pending |
+| M2 | Kulshresth | htserhsluk | Authenticated write access; M2-S01 and AI-assisted import review in progress |
+| M3 | Pending member-provided name | abhinavbhatia2006 | Collaborator access verified 6 November; assigned M2-S01 review |
 
 Member 1 requested branch `Aksha Jain`. Git forbids spaces in branch names, so `Aksha-Jain`
 is the member's branch in this shared repository, not a separate repository. The current M1-S01
@@ -23,3 +23,8 @@ never send tokens/passwords to chat. Other members join under their own accounts
 The existing Google authorization belongs to the owner's friend. It is not a shared team credential.
 Fixture builds need no Google credentials. A separate authorized account/profile and owner consent
 are needed for each intended live use. Never import desktop-client.json or a DPAPI vault.
+
+M2 explicitly requested branch `Kulshresth`. Its first commit is the packaging privacy correction
+23fec77, followed by the M2-S01 source audit. While PR #2 is unmerged, the M2 PR is a dependent
+review against `Aksha-Jain`, not a claim of a reviewed-main baseline. Final integration and
+package completion require the reviewed dependency and M3 review.

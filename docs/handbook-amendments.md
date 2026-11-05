@@ -24,3 +24,18 @@ defaults are the verified 1/50/1 catalog. Bounds and charges use the same catalo
 ## Completion remediation — 2026-11-02
 
 Supersedes earlier manual-only recovery, single-page sampling and unbounded terminal-draft retention descriptions. ADR-0010 defines generation-bound credentials, unconditional local disconnect, five-minute bounded metadata cache, two-page personal sampling, schema-2 exclusion/confirmed-write results, known-prefix CLI repair, manual resolution and seven-day cleanup. Quality scripts now include real Gitleaks, OSV inventory review, strict skill YAML/cases, traceability and final external evidence gates. Full behavioral skill and live/human acceptance remain real steps in ../plan.md, not claimed historical executions.
+
+## Team execution clarification - M2-S01, 2026-11-05
+
+Items 1 and 4 describe the historical local phase and are superseded for current execution.
+GitHub work is authorized through the shared three-member plan; its required PRs, human reviews,
+CI, scheduled live run and release evidence cannot be waived by this handbook companion.
+Historical Google consent and limited live demonstrations occurred on the original workstation;
+see live-demo-status-2026-11-04.md for their limits. They do not authorize other members or prove
+all live/host/stage gates. The client PDFs remain authoritative and privately supplied; do not
+include originals or extracted source text in public Git imports or release archives.
+
+The current source ledger records exact client page references, all 41 numbered IDs and
+unnumbered obligations. Handbook weights, SQL/code examples, technology selections and numeric
+bounds are design choices, not new client mandates. Two-developer examples do not replace the
+actual three-member plan. Future changes still require the applicable ADR, evidence and review.

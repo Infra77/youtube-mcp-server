@@ -1,8 +1,8 @@
 # Completion-audit remediation — 2026-11-03
 
 The 2 November audit remains a historical record outside the project. This document records code
-changes made in response, not retrospective human signoff. Original source PDFs are portable under
-docs/reference; unchanged originals also remain outside the project on the initial workstation.
+changes made in response, not retrospective human signoff. Original source PDFs are privately supplied to authorized reviewers; they are not distributed
+in public Git or release archives. See reference/README.md for access guidance.
 
 | Audit | Local changes | Remaining independent acceptance |
 |---|---|---|

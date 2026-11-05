@@ -1,7 +1,10 @@
 # Software requirements specification v0.1
 ## Authority and scope
 Project_1_YouTube_MCP.pdf and SDLC_and_Workflow.pdf are client authority. Handbook implementation
-steps 0–47 govern delivery. Local-only deviation is explicitly authorized by the user.
+steps 0–47 guide delivery; examples and local amendments cannot waive client obligations.
+Earlier local-only work is historical provenance, not a waiver of GitHub, human review or live
+acceptance. The current three-member completion plan governs the remaining execution.
+See [source obligation ledger](source-obligation-ledger.md) for page references and all 41 IDs.
 The product is a Java 21 stdio MCP server, local administration CLI, PostgreSQL persistence,
 tests, five Agent Skills and an Obsidian vault. Existing AI clients supply conversation.
 No frontend, generic REST service, unofficial API, watch history or transcript scraping.
@@ -31,7 +34,7 @@ SK-05 video-to-playlist. Each requires positive/negative evaluation and a distil
 SE-1 SRS; SE-2 architecture/diagrams; SE-3 ADRs; SE-4 development plan; SE-5 traceability;
 SE-6 provider boundary; SE-7 user and MCP developer docs.
 SB-1 wikilinks; SB-2 stage reviews; SB-3 ADR/skill citations; SB-4 AGENTS.md;
-SB-5 brain PR reviews; SB-6 real contributor authorship. SB-5/6 remote evidence deferred.
+SB-5 brain PR reviews; SB-6 real contributor authorship. SB-5/6 require genuine PR and contributor evidence before acceptance.
 ## Test acceptance
 TQ-1 unit; TQ-2 component/provider/database integration; TQ-3 MCP E2E all FRs;
 TQ-4 prescribed negative matrix; TQ-5 isolated fixtures and separate bounded live run;
@@ -61,3 +64,35 @@ Measurable quality: 50-candidate domain workflows, 100 ranking/selection repetit
 Risks: incomplete/inaccurate language metadata; sparse personal sources; external quota consumption; expired test OAuth; unknown remote write outcome; accidental local credential exposure; dependency advisories; unavailable reviewer or machine. Mitigations are truthful caveats, hard constraints, conservative budgets, reauthorization, durable journal and exact-prefix repair, DPAPI, scans and mandatory evidence gates. No guarantee of teaching quality, watched content, global optimization or guaranteed exact runtime is made.
 
 Change control: original FR/TQ/SB/SE identifiers remain unchanged. Schema, scope, retention, ranking or transport changes require an ADR, regression evidence, affected traceability and peer review. v0.1 baseline 2026-10-31; completion remediation 2026-11-02. Final signoff is controlled by acceptance-evidence.json and the final release gate, never test counts alone.
+
+## Source contract clarification - M2-S01, 2026-11-05
+
+The source obligation ledger also inventories requirements without an FR/TQ/SB/SE number:
+tools AND resources, official API only, caching/fixtures, no quota evasion through extra projects,
+reauthorization, no-channel handling and OAuth/secret/input/injection/personal-data security tests.
+SK-01..05 are local identifiers for required workflows; NFR-01..10 and their numeric bounds are
+project decisions supporting the client obligations, not additional quotations from the client.
+
+Every PR requires build, lint, automated tests, secret scanning, skill schema validation and brain
+schema/link validation. Live tests require a separate scheduled workflow with a fixed quota budget;
+a disabled workflow or a manually triggered run alone does not satisfy scheduled execution.
+Every AI-generated PR change needs actual human review. All three members contribute notes and
+meaningful commits, understand merged work, and retain significant AI-session records.
+
+Stage 1 requires sourced ingest of at least ten research notes, SRS, PARA/index/log, AGENTS and
+real repository/CI evidence. Stage 2 requires architecture/diagrams and actual refine/query use
+plus local-check v1. Stage 3 requires CI/test/product-skill/defect-regression evidence. Stage 4
+requires live FR and product-skill demonstration in an existing client, live local-check/query,
+a requirement walkthrough and final release tag. Skill evaluations precede every stage submission.
+
+Supported live environment is Windows with Java 21, PostgreSQL 16 and the Windows CurrentUser
+DPAPI vault. Fixture test support on another platform does not establish portable live credentials.
+FR-5 interprets total duration as an inclusive upper bound in whole seconds and discloses exact
+shortfall; it does not promise exact fill. Declared audio-language metadata must meet the requested
+language policy, with unknown excluded; metadata does not prove spoken language. The exact
+ordered preview, account, privacy, title, constraints, expiry and fingerprint precede human approval.
+An impossible selection fails explicitly; ambiguous natural language requests clarification.
+No source failure, absent temporal evidence or partial write may be presented as complete success.
+
+This clarification records acceptance obligations, not their completion. The ledger, actual tests,
+reviewed PRs and acceptance-evidence manifest remain the proof required for final signoff.
