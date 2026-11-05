@@ -11,6 +11,7 @@ steps=[('build',maven('clean','package','-DskipTests')),
  ('formatting',maven('spotless:check')),
  ('documentation',[sys.executable,'scripts/validate_docs.py']),
  ('traceability',[sys.executable,'scripts/validate_traceability.py']),
+ ('packagePrivacy',[sys.executable,'tests/test_package_privacy.py']),
  ('skillSchema',[sys.executable,'scripts/validate_skills.py']),
  ('secretScan',[str(R/'.tools/gitleaks/gitleaks.exe'),'dir','.', '--config','.gitleaks.toml','--redact','--no-banner','--report-format','json','--report-path','target/evidence/gitleaks.json']),
  ('startServerAndReadOnlyTool',[sys.executable,'tests/mcp/smoke.py'])]

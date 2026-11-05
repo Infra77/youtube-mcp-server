@@ -25,3 +25,18 @@ failures; no fabricated ticket numbers. Full reports are in target; sanitized su
 - Terminal drafts had no retention limit: DatabaseIT.retentionRemovesOldTerminalDraftsAndDiagnosticsSurviveRoundtrip.
 - Initial OAuth test encryption seam returned the same byte array that was then wiped; fixed the synthetic protection adapter to return a copy. This was a test defect, not a DPAPI bypass.
 - Docker startup failed on a stale Windows runtime socket; preserved/recreated its run directory, with no volume deletion. Test infrastructure failures are not skipped tests.
+# Packaging privacy regression - M2 review, 2026-11-06
+
+PR #2 at 3deb6b4395e685b2292d1fdfd8f9265a4b2af447 copied private PDFs and credential-named
+files into release ZIPs because packaging did not apply Git ignore rules or equivalent exclusions.
+The reproduction used synthetic files only. M2's fix applies a case-insensitive private-path
+policy during selection, staging and archive verification; symbolic links and unsafe paths fail
+closed. All PDFs are excluded because the supplied PDFs are private; any future public PDF
+distribution requires an explicit reviewed policy change. Placeholder `.env.example` is retained.
+
+Regression: `python tests/test_package_privacy.py` runs the actual packager against synthetic
+private files in all nine source roots and checks public files remain. It separately rejects
+contaminated archives before extraction. The local quality pipeline runs this regression.
+Requirements: NFR-01, TQ-8, SE-7. Tracking: [M2-S01](https://github.com/Infra77/youtube-mcp-server/issues/3),
+[A10](https://github.com/Infra77/youtube-mcp-server/issues/13), [A11](https://github.com/Infra77/youtube-mcp-server/issues/14).
+Human review/merge of this fix remains pending; this record does not claim a published safe release.

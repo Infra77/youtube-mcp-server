@@ -1,15 +1,16 @@
 """Verify package hashes and probe the actual PowerShell launcher from an isolated extraction."""
 from pathlib import Path
 import hashlib,zipfile,json,os,importlib.util
+from package_policy import verify_archive_members
 ROOT=Path(__file__).resolve().parents[1]
 archive=ROOT/'release/educational-video-curator-mcp-0.1.0-local.zip'
 destination=ROOT/'target/release-probe'
 destination.mkdir(exist_ok=True)
 with zipfile.ZipFile(archive) as z:
+    verify_archive_members(z)
     for member in z.namelist():
         resolved=(destination/member).resolve()
         assert resolved.is_relative_to(destination.resolve()),'Unsafe archive member'
-    assert not any('/.local/' in n or '/.tools/' in n or n.endswith('.env') or '.dpapi' in n for n in z.namelist())
     z.extractall(destination)
 package=destination/'educational-video-curator-mcp-0.1.0-local'
 count=0

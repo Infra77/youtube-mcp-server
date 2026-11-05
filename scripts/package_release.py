@@ -1,6 +1,7 @@
 """Build a local review distribution from explicit credential-free paths."""
 from pathlib import Path
 import hashlib,json,shutil,zipfile
+from package_policy import excluded_path, verify_archive_members
 ROOT=Path(__file__).resolve().parents[1]
 release=ROOT/'release/educational-video-curator-mcp-0.1.0-local'
 if release.exists():
@@ -11,12 +12,17 @@ report=json.loads((ROOT/'target/evidence/local-check.json').read_text(encoding='
 assert report['overall']=='PASS','Packaging requires successful local-check'
 roots=['src','scripts','tests','infra','docs','brain','.agents','evals','.mvn']
 files=['pom.xml','mvnw','mvnw.cmd','.gitignore','.gitattributes','.gitleaks.toml','.gitleaksignore','README.md','CHANGELOG.md','AGENTS.md','LICENSE','target/curator.jar']
-omitted={'__pycache__','source-text','.local','.tools','.git','workspace.json','workspace-mobile.json'}
 for folder in roots:
     for p in (ROOT/folder).rglob('*'):
-        if p.is_file() and not any(s in omitted for s in p.relative_to(ROOT).parts): files.append(p.relative_to(ROOT).as_posix())
+        relative=p.relative_to(ROOT).as_posix()
+        if excluded_path(relative): continue
+        if p.is_symlink() or (hasattr(p, 'is_junction') and p.is_junction()):
+            raise ValueError('Release source must not contain symbolic links or junctions')
+        if p.is_file(): files.append(relative)
 for relative in sorted(set(files)):
     source=ROOT/relative;destination=release/relative
+    if excluded_path(relative) or not source.resolve().is_relative_to(ROOT.resolve()):
+        raise ValueError('Forbidden release source path')
     assert source.is_file(),relative
     destination.parent.mkdir(parents=True,exist_ok=True);shutil.copy2(source,destination)
 quick='''# Local review package 0.1.0
@@ -33,12 +39,14 @@ entries=[]
 for p in sorted(release.rglob('*')):
     if not p.is_file() or p.name=='SHA256SUMS.txt':continue
     relative=p.relative_to(release).as_posix()
-    assert not any(s in omitted for s in p.relative_to(release).parts),relative
+    if excluded_path(relative): raise ValueError('Forbidden staged release path')
     entries.append(hashlib.sha256(p.read_bytes()).hexdigest()+'  '+relative)
 (release/'SHA256SUMS.txt').write_text('\n'.join(entries)+'\n',encoding='utf-8')
 archive=Path(str(release)+'.zip')
 with zipfile.ZipFile(archive,'w',zipfile.ZIP_DEFLATED,compresslevel=6) as z:
     for p in sorted(release.rglob('*')):
         if p.is_file():z.write(p,p.relative_to(release.parent))
-with zipfile.ZipFile(archive) as z:assert z.testzip() is None
+with zipfile.ZipFile(archive) as z:
+    verify_archive_members(z)
+    assert z.testzip() is None
 print(json.dumps({'package':str(archive),'files':len(entries)+1,'bytes':archive.stat().st_size,'sha256':hashlib.sha256(archive.read_bytes()).hexdigest()},indent=2))

@@ -18,3 +18,8 @@ Google/human prerequisites and complete audit mapping. No historical contributio
 ## 2026-11-04 — M1-S01 bootstrap
 
 [[M1-S01 Bootstrap Session]] records the real repository import, checks and pending authentication/peer gates. No historical commits or reviews are invented.
+# 2026-11-06 - M2 packaging privacy correction
+
+User requested fixing the reproduced private-file archive inclusion. Prepared an AI-assisted
+correction and synthetic regressions on M2's own branch. See [[M2 Packaging Privacy Fix]].
+Validation passed; human review/merge and full M2-S01 completion remain pending.
